@@ -1,0 +1,176 @@
+.fade-in-up {
+  opacity: 0;
+  animation: fade-in-up 700ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: var(--fade-delay, 0ms);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+}
+
+#description,
+#projects,
+#socials {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+#socials a {
+  min-width: 0;
+}
+
+.trans-gradient {
+  background: linear-gradient(90deg, #00c8ff 0%, #ff6f91 24%, #ffffff 50%, #ff6f91 76%, #00c8ff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 600;
+  text-shadow: 0 0 12px rgba(255, 111, 145, 0.22);
+}
+
+.profile-card {
+  isolation: isolate;
+}
+
+.profile-card > *:not(.ambient-glow) {
+  position: relative;
+  z-index: 1;
+}
+
+.ambient-glow {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 1;
+  filter: blur(32px) saturate(1.45);
+  background: radial-gradient(circle at 50% 45%, rgba(126, 34, 206, 0.07), transparent 72%);
+}
+
+.glow-orb {
+  position: absolute;
+  display: block;
+  width: 40rem;
+  height: 40rem;
+  border-radius: 999px;
+  opacity: 0.4;
+  background: radial-gradient(circle at 35% 35%, rgba(216, 180, 254, 0.48), rgba(168, 85, 247, 0.14) 42%, transparent 72%);
+  will-change: transform;
+}
+
+.glow-orb-one {
+  top: -7rem;
+  left: -5rem;
+  animation: float-orb-one 22s ease-in-out infinite;
+}
+
+.glow-orb-two {
+  top: 18%;
+  right: -8rem;
+  width: 44rem;
+  height: 44rem;
+  background: radial-gradient(circle at 60% 40%, rgba(192, 132, 252, 0.4), rgba(126, 34, 206, 0.12) 44%, transparent 72%);
+  animation: float-orb-two 26s ease-in-out infinite;
+}
+
+.glow-orb-three {
+  bottom: -10rem;
+  left: 30%;
+  width: 46rem;
+  height: 46rem;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.32), rgba(59, 7, 100, 0.08) 48%, transparent 72%);
+  animation: float-orb-three 24s ease-in-out infinite;
+}
+
+.glow-orb-four {
+  top: 42%;
+  left: 36%;
+  width: 20rem;
+  height: 20rem;
+  opacity: 0.55;
+  background: radial-gradient(circle, rgba(244, 114, 182, 0.25), transparent 68%);
+  animation: float-orb-four 18s ease-in-out infinite;
+}
+
+@keyframes float-orb-one {
+  0%, 100% { transform: translate(-1rem, -1rem) scale(1); }
+  25% { transform: translate(10rem, 7rem) scale(1.08); }
+  50% { transform: translate(18rem, -5rem) scale(0.94); }
+  75% { transform: translate(7rem, 15rem) scale(1.1); }
+}
+
+@keyframes float-orb-two {
+  0%, 100% { transform: translate(1rem, 0) scale(0.98); }
+  25% { transform: translate(-11rem, 8rem) scale(1.08); }
+  50% { transform: translate(-20rem, -5rem) scale(0.93); }
+  75% { transform: translate(-7rem, 16rem) scale(1.06); }
+}
+
+@keyframes float-orb-three {
+  0%, 100% { transform: translate(0, 2rem) scale(1); }
+  25% { transform: translate(-12rem, -8rem) scale(0.95); }
+  50% { transform: translate(14rem, -12rem) scale(1.08); }
+  75% { transform: translate(20rem, 5rem) scale(0.94); }
+}
+
+@keyframes float-orb-four {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(8rem, -6rem) scale(1.16); }
+  50% { transform: translate(-10rem, 8rem) scale(0.9); }
+  75% { transform: translate(12rem, 10rem) scale(1.1); }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    translate: 0 1rem;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-up {
+    opacity: 1;
+    animation: none;
+    translate: none;
+  }
+
+  .glow-orb {
+    animation: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .profile-card {
+    border-radius: 1.5rem;
+  }
+
+  .profile-card .glow-orb {
+    transform: scale(0.7);
+  }
+
+  #description {
+    font-size: 0.95rem;
+    line-height: 1.65rem;
+  }
+}
