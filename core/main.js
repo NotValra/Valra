@@ -32,7 +32,7 @@ if (description) {
     }),
   );
 }
-
+// comment to see if it fixes deployment
 const projects = [
   { label: "RoValra", href: "https://www.rovalra.com" },
 ];
