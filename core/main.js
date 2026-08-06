@@ -36,7 +36,7 @@ if (description) {
 const projects = [
   { label: "RoValra", href: "https://www.rovalra.com" },
 ];
-
+// Pills
 document.querySelector("#welcome-pill").append(
   createPill({
     label: "I LOVE doing silly things :3",
@@ -44,6 +44,15 @@ document.querySelector("#welcome-pill").append(
   }),
 );
 
+document.querySelector("#misc").append(
+  createPill({
+    label: "Random pill made for funnies :)",
+
+    className: "uppercase tracking-[0.1em]",
+  }),
+);
+
+// status
 const statusPill = createPill({
   label: "Haiiii :3",
   className: "!bg-[#1b102b] -translate-x-2 px-6 py-3 text-lg text-purple-100",
@@ -62,10 +71,11 @@ document.querySelector("#status-bubble").append(
 );
 
 const socials = [
-  { label: "X", username: "@valraswag", href: "https://x.com/valraswag", icon: "fa-brands fa-x-twitter" },
-  { label: "Discord", username: "discord.gg/BjWaQ4e7AY", href: "https://discord.gg/BjWaQ4e7AY", icon: "fa-brands fa-discord" },
+  { label: "X", username: "ValraSwag", href: "https://x.com/valraswag", icon: "fa-brands fa-x-twitter" },
+  { label: "Discord", username: "", href: "https://discord.gg/BjWaQ4e7AY", icon: "fa-brands fa-discord" },
   //{ label: "YouTube", href: "https://youtube.com/", icon: "fa-brands fa-youtube" },
-  { label: "TikTok", username: "@valrawantbanana", href: "https://www.tiktok.com/@valrawantbanana", icon: "fa-brands fa-tiktok" },
+  { label: "TikTok", username: "ValraWantBanana", href: "https://www.tiktok.com/@valrawantbanana", icon: "fa-brands fa-tiktok" },
+  { label: "GitHub", username: "NotValra", href: "https://github.com/NotValra", icon: "fa-brands fa-github" },
 ];
 
 const socialElements = socials.map(({ label, username, href, icon }) => {
