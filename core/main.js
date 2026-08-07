@@ -80,7 +80,7 @@ blahajImage.className = "mx-auto mt-4 max-h-[12rem] w-full max-w-2xl  ";
 
 document.querySelector("#misc").append(blahajImage);
 const gilbertImage = document.createElement("img");
-gilbertImage.src = "./static/imgs/gilbert.png";
+gilbertImage.src = "./static/imgs/GILBERT.png";
 gilbertImage.className = "mx-auto mt-4 max-h-[12rem] w-full max-w-2x1";
 document.querySelector("#misc").append(gilbertImage);
 
