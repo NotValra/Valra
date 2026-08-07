@@ -10,6 +10,7 @@ if (description) {
     "On January 1st 2025 I started RoValra a chrome extension as a fun project, and now its pretty much my job <3",
     "I love to datamine Roblox and leak upcoming updates.",
     "Sometimes I also do some bug bounty hunting on Roblox :3",
+    "I really like Roblox as a platform if you couldn't tell, however the games suck for the most part LOL"
   ];
 
   description.replaceChildren(
@@ -46,20 +47,44 @@ document.querySelector("#welcome-pill").append(
 
 document.querySelector("#misc").append(
   createPill({
-    label: "Random pill made for funnies :)",
+    label: "I HEARD VALRA DOESN'T LIKE ME! - LucentWaves *does cute kawaii cyber criminal dance*",
 
     className: "uppercase tracking-[0.1em]",
   }),
 );
+
+
+// Images
+const funnyVideo = document.createElement("video");
+funnyVideo.className = "mt-4 block max-h-[24rem] max-w-2xl ";
+funnyVideo.controls = true;
+funnyVideo.loop = true;
+funnyVideo.muted = false;
+funnyVideo.autoplay = false;
+funnyVideo.playsInline = true;
+funnyVideo.preload = "metadata";
+funnyVideo.setAttribute("aria-label", "Valra video");
+
+
+
+const funnyVideoSource = document.createElement("source");
+funnyVideoSource.src = "./static/imgs/VALRADOESNTLIKEME!.mp4";
+funnyVideoSource.type = "video/mp4";
+funnyVideo.append(funnyVideoSource, "Your browser does not support HTML5 video.");
+document.querySelector("#misc").append(funnyVideo);
+
+
 const blahajImage = document.createElement("img");
 blahajImage.src = "./static/imgs/blahaj.png";
 blahajImage.className = "mx-auto mt-4 max-h-[12rem] w-full max-w-2xl  ";
-document.querySelector("#misc").append(blahajImage);
 
-const funnyImage = document.createElement("img");
-funnyImage.src = "./static/imgs/funny.png";
-funnyImage.className = "mx-auto mt-4 max-h-[12rem] w-full max-w-2x1 object-contain";
-document.querySelector("#misc").append(funnyImage);
+document.querySelector("#misc").append(blahajImage);
+const gilbertImage = document.createElement("img");
+gilbertImage.src = "./static/imgs/gilbert.png";
+gilbertImage.className = "mx-auto mt-4 max-h-[12rem] w-full max-w-2x1";
+document.querySelector("#misc").append(gilbertImage);
+
+
 
 // status
 const statusPill = createPill({
