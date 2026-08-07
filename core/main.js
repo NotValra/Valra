@@ -51,6 +51,15 @@ document.querySelector("#misc").append(
     className: "uppercase tracking-[0.1em]",
   }),
 );
+const blahajImage = document.createElement("img");
+blahajImage.src = "./static/imgs/blahaj.png";
+blahajImage.className = "mx-auto mt-4 max-h-[12rem] w-full max-w-2xl  ";
+document.querySelector("#misc").append(blahajImage);
+
+const funnyImage = document.createElement("img");
+funnyImage.src = "./static/imgs/funny.png";
+funnyImage.className = "mx-auto mt-4 max-h-[12rem] w-full max-w-2x1 object-contain";
+document.querySelector("#misc").append(funnyImage);
 
 // status
 const statusPill = createPill({
