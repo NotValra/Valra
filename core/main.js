@@ -107,12 +107,33 @@ document.querySelector("#status-bubble").append(
 const socials = [
   { label: "X", username: "ValraSwag", href: "https://x.com/valraswag", icon: "fa-brands fa-x-twitter" },
   { label: "Discord", username: "", href: "https://discord.gg/BjWaQ4e7AY", icon: "fa-brands fa-discord" },
-  //{ label: "YouTube", href: "https://youtube.com/", icon: "fa-brands fa-youtube" },
+  { label: "YouTube", username: "NotValra", href: "https://www.youtube.com/@NotValra", icon: "fa-brands fa-youtube" },
   { label: "TikTok", username: "ValraWantBanana", href: "https://www.tiktok.com/@valrawantbanana", icon: "fa-brands fa-tiktok" },
   { label: "GitHub", username: "NotValra", href: "https://github.com/NotValra", icon: "fa-brands fa-github" },
+  { label: "HackerOne", username: "Valra", href: "https://hackerone.com/valra", brandIcon: "hackerone" },
+  { label: "Roblox", username: "NotValra", href: "https://www.roblox.com/users/447170745/profile", brandIcon: "roblox" }
 ];
 
-const socialElements = socials.map(({ label, username, href, icon }) => {
+const brandIconPaths = {
+  hackerone: "M7.207 0c-.4836 0-.8774.1018-1.1823.3002-.3044.2003-.4592.4627-.4592.7798v21.809c0 .2766.1581.5277.4752.7609.315.2335.7031.3501 1.1664.3501.4427 0 .8306-.1166 1.1678-.3501.3352-.231.5058-.4843.5058-.761V1.0815c0-.319-.1623-.5769-.4893-.7813C8.0644.1018 7.6702 0 7.207 0zm9.5234 8.662c-.4836 0-.8717.0981-1.1683.3007l-4.439 2.7822c-.1988.1861-.2841.4687-.2473.855.0342.3826.2108.747.5238 1.0907.3145.346.6662.5626 1.0684.6547.3963.0899.6973.041.8962-.143l1.7551-1.0951v9.7817c0 .2767.1522.5278.4607.761.3007.2335.6873.3501 1.1504.3501.463 0 .863-.1166 1.1983-.3501.3371-.2332.5058-.4843.5058-.761V9.7381c0-.3193-.165-.577-.4898-.7754-.3252-.2026-.7288-.3007-1.2143-.3007z",
+  roblox: "M11.676 0 0 44.166 43.577 56l11.676-44.166zm20.409 35.827-12.177-3.308 3.264-12.342 12.182 3.308z"
+};
+
+function createBrandIcon(name) {
+  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  svg.setAttribute("viewBox", name === "roblox" ? "0 0 55.253 56" : "0 0 18.45 23.6");
+  svg.setAttribute("class", "h-4 w-4 shrink-0 fill-current");
+  svg.setAttribute("aria-hidden", "true");
+
+  const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  path.setAttribute("d", brandIconPaths[name]);
+  path.setAttribute("fill-rule", "evenodd");
+  path.setAttribute("clip-rule", "evenodd");
+  svg.append(path);
+  return svg;
+}
+
+const socialElements = socials.map(({ label, username, href, icon, brandIcon }) => {
   const displayLabel = `${label} · ${username}`;
   const link = createPill({
     label: displayLabel,
@@ -125,9 +146,11 @@ const socialElements = socials.map(({ label, username, href, icon }) => {
   link.setAttribute("aria-label", displayLabel);
   link.title = displayLabel;
 
-  const iconElement = document.createElement("i");
-  iconElement.className = icon;
-  iconElement.setAttribute("aria-hidden", "true");
+  const iconElement = brandIcon ? createBrandIcon(brandIcon) : document.createElement("i");
+  if (icon) {
+    iconElement.className = icon;
+    iconElement.setAttribute("aria-hidden", "true");
+  }
   link.append(iconElement);
 
   return link;
