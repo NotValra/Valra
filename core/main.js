@@ -4,7 +4,7 @@ import { createPill } from "./pill.js";
 const description = document.querySelector("#description");
 if (description) {
   const bioLines = [
-    "I'm Valra! I go by she/her pronouns, and I like Roblox a little too much.",
+    "I'm Valra! I go by she/her pronouns, I am so autistic its wild and with a bit of ADHD aswell, and I like Roblox a little too much.",
     "I have been on Roblox since 2015, and never left.",
     "You may know me from RoValra :3",
     "On January 1st 2025 I started RoValra a chrome extension as a fun project, and now its pretty much my job <3",
@@ -24,7 +24,7 @@ if (description) {
         const pronouns = document.createElement("span");
         pronouns.className = "trans-gradient font-medium";
         pronouns.textContent = "she/her";
-        lineElement.append(pronouns, " pronouns, and I like Roblox a little too much.");
+        lineElement.append(pronouns, " pronouns, I am so autistic its wild and with a bit of ADHD aswell, and I like Roblox a little too much.");
       } else {
         lineElement.textContent = line;
       }
