@@ -21,7 +21,7 @@ if (description) {
   description.replaceChildren(
     ...bioLines.map((line, index) => {
       const lineElement = document.createElement("span");
-      lineElement.className = index === 0 ? "block" : "mt-3 block";
+      lineElement.className = index === 0 ? "block" : "block";
 
       if (index === 0) {
         lineElement.append("I'm Valra! I go by ");
