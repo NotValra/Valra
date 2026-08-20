@@ -7,10 +7,15 @@ if (description) {
     "I'm Valra! I go by she/her pronouns, I am so autistic its wild and with a bit of ADHD aswell, and I like Roblox a little too much.",
     "I have been on Roblox since 2015, and never left.",
     "You may know me from RoValra :3",
-    "On January 1st 2025 I started RoValra a chrome extension as a fun project, and now its pretty much my job <3",
-    "I love to datamine Roblox and leak upcoming updates.",
+    "On January 1st 2025 I started RoValra a chrome extension as a fun project, and now its my actual fulltime job <3",
+    "I love to datamine Roblox (rarely tbf) and leak upcoming updates.",
     "Sometimes I also do some bug bounty hunting on Roblox :3",
-    "I really like Roblox as a platform if you couldn't tell, however the games suck for the most part LOL"
+    "I really like Roblox as a platform if you couldn't tell, however the games suck for the most part LOL",
+    "Fun facts:",
+    "- I have lived in Denmark pretty much my entire life but I somehow don't really know anyone irl :)",
+    "- I got into development from Roblox game development around 2020-2022 and made many projects I never finished.",
+    "- Before RoValra I liked to dig and find stuff in Roblox's APIs, so I partly started RoValra to put that knowledge to use.",
+    "- I'm actively QA testing for a bunch of Roblox games, notably QA tested for a game made by @woozynate on Roblox."
   ];
 
   description.replaceChildren(
