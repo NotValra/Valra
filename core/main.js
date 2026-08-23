@@ -11,11 +11,13 @@ if (description) {
     "I love to datamine Roblox (rarely tbf) and leak upcoming updates.",
     "Sometimes I also do some bug bounty hunting on Roblox :3",
     "I really like Roblox as a platform if you couldn't tell, however the games suck for the most part LOL",
+    "Also I am the only REAL Valra cuz I come up when you search Valra on google 😡 L to all the others using the name Valra",
     "Fun facts:",
     "- I have lived in Denmark pretty much my entire life but I somehow don't really know anyone irl :)",
     "- I got into development from Roblox game development around 2020-2022 and made many projects I never finished.",
     "- Before RoValra I liked to dig and find stuff in Roblox's APIs, so I partly started RoValra to put that knowledge to use.",
-    "- I'm actively QA testing for a bunch of Roblox games, notably QA tested for a game made by @woozynate on Roblox."
+    "- I'm actively QA testing for a bunch of Roblox games, notably QA tested for a game made by @woozynate on Roblox.",
+    "- I barely play Roblox for fun anymore, I just develop RoValra :) and same for any games for that matter other than Rhythia"
   ];
 
   description.replaceChildren(
