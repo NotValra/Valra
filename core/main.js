@@ -169,7 +169,7 @@ const socialsContainer = createContainer({
   children: socialElements,
 });
 
-document.querySelector("#socials").append(socialsContainer);
+document.querySelector("#socials-section").append(socialsContainer);
 
 const projectElements = projects.map(({ label, href }) =>
   createPill({
