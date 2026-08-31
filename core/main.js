@@ -114,7 +114,7 @@ document.querySelector("#status-bubble").append(
 
 const socials = [
   { label: "X", username: "ValraSwag", href: "https://x.com/valraswag", icon: "fa-brands fa-x-twitter" },
-  { label: "Discord", username: "", href: "https://discord.gg/BjWaQ4e7AY", icon: "fa-brands fa-discord" },
+  { label: "Discord", username: "Valra", href: "https://discord.com/users/766999344146153482", icon: "fa-brands fa-discord" },
   { label: "YouTube", username: "NotValra", href: "https://www.youtube.com/@NotValra", icon: "fa-brands fa-youtube" },
   { label: "TikTok", username: "ValraWantBanana", href: "https://www.tiktok.com/@valrawantbanana", icon: "fa-brands fa-tiktok" },
   { label: "GitHub", username: "NotValra", href: "https://github.com/NotValra", icon: "fa-brands fa-github" },
