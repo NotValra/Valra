@@ -43,7 +43,6 @@ if (description) {
 // comment to see if it fixes deployment
 const projects = [
   { label: "RoValra", href: "https://www.rovalra.com" },
-  { label: "Gilberts (Secret yet to be announced Project that will prob never release)", href: "https://valra.cc" },
 ];
 // Pills
 document.querySelector("#welcome-pill").append(
