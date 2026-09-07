@@ -28,13 +28,13 @@ video {
 
 #description,
 #projects,
-#socials {
+#socials-section {
   min-width: 0;
   max-width: 100%;
   overflow-wrap: anywhere;
 }
 
-#socials a {
+#socials-section a {
   min-width: 0;
 }
 
