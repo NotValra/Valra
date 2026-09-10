@@ -61,6 +61,38 @@ document.querySelector("#misc").append(
 );
 
 
+// Art gallery
+const artSection = document.querySelector("#art-section");
+
+async function loadArtGallery() {
+  if (!artSection) return;
+
+  try {
+    const response = await fetch("./static/imgs/art/index.json");
+    if (!response.ok) throw new Error(`Unable to load art manifest (${response.status})`);
+
+    const artFiles = await response.json();
+    const artImages = artFiles.map((fileName) => {
+      const image = document.createElement("img");
+      image.src = `./static/imgs/art/${encodeURIComponent(fileName)}`;
+      image.alt = fileName.replace(/\.[^/.]+$/, "").replace(/[-_]+/g, " ");
+      image.loading = "lazy";
+      image.className = "max-h-[32rem] min-h-48 w-full rounded-2xl border border-purple-900/70 bg-black/20 object-contain shadow-lg";
+      return image;
+    });
+
+    const gallery = createContainer({
+      className: "grid gap-4 sm:grid-cols-2",
+      children: artImages,
+    });
+    artSection.append(gallery);
+  } catch (error) {
+    console.error("Could not load the art gallery.", error);
+  }
+}
+
+loadArtGallery();
+
 // Images
 const funnyVideo = document.createElement("video");
 funnyVideo.className = "mt-4 block max-h-[24rem] max-w-2xl ";
