@@ -1,6 +1,37 @@
 import { createContainer } from "./container.js";
 import { createPill } from "./pill.js";
 
+const profileCard = document.querySelector(".profile-card");
+if (profileCard && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  let framePending = false;
+  let latestPointer = null;
+
+  const updateCardGlow = () => {
+    framePending = false;
+    if (!latestPointer) return;
+
+    const rect = profileCard.getBoundingClientRect();
+    const x = Math.min(Math.max(latestPointer.clientX - rect.left, 0), rect.width);
+    const y = Math.min(Math.max(latestPointer.clientY - rect.top, 0), rect.height);
+    const distanceX = Math.max(rect.left - latestPointer.clientX, 0, latestPointer.clientX - rect.right);
+    const distanceY = Math.max(rect.top - latestPointer.clientY, 0, latestPointer.clientY - rect.bottom);
+    const distance = Math.hypot(distanceX, distanceY);
+    const glowStrength = Math.max(0, 1 - distance / 220);
+
+    profileCard.style.setProperty("--mouse-x", `${x}px`);
+    profileCard.style.setProperty("--mouse-y", `${y}px`);
+    profileCard.style.setProperty("--mouse-glow", glowStrength.toFixed(3));
+  };
+
+  window.addEventListener("pointermove", (event) => {
+    latestPointer = event;
+    if (!framePending) {
+      framePending = true;
+      requestAnimationFrame(updateCardGlow);
+    }
+  }, { passive: true });
+}
+
 const description = document.querySelector("#description");
 if (description) {
   const bioLines = [
@@ -44,14 +75,6 @@ if (description) {
 const projects = [
   { label: "RoValra", href: "https://www.rovalra.com" },
 ];
-// Pills
-document.querySelector("#welcome-pill").append(
-  createPill({
-    label: "I LOVE doing silly things :3",
-    className: "uppercase tracking-[0.3em]",
-  }),
-);
-
 document.querySelector("#misc").append(
   createPill({
     label: "I HEARD VALRA DOESN'T LIKE ME! - LucentWaves *does cute kawaii cyber criminal dance*",

@@ -50,6 +50,33 @@ video {
 
 .profile-card {
   isolation: isolate;
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+  --mouse-glow: 0;
+  transition: border-color 180ms ease;
+}
+
+.profile-card::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: -3px;
+  padding: 2px;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(
+    180px circle at var(--mouse-x) var(--mouse-y),
+    rgba(255, 105, 180, 0.95),
+    rgba(255, 105, 180, 0.35) 38%,
+    transparent 74%
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  filter: blur(8px);
+  opacity: var(--mouse-glow);
+  transition: opacity 180ms ease;
 }
 
 .profile-card > *:not(.ambient-glow) {
@@ -162,6 +189,10 @@ video {
 
   .glow-orb {
     animation: none;
+  }
+
+  .profile-card::before {
+    display: none;
   }
 }
 
