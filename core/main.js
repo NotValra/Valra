@@ -116,6 +116,47 @@ async function loadArtGallery() {
 
 loadArtGallery();
 
+// GitHub Sponsors
+const sponsorsSection = document.querySelector("#sponsors-section");
+
+async function loadSponsors() {
+  if (!sponsorsSection) return;
+
+  try {
+    const response = await fetch("https://apis.rovalra.com/v1/github/sponsors");
+    if (!response.ok) throw new Error(`Unable to load GitHub sponsors (${response.status})`);
+
+    const data = await response.json();
+    const sponsorLinks = (data.sponsors ?? []).map(({ avatar_url, login, name, profile_url }) => {
+      const link = document.createElement("a");
+      link.href = profile_url;
+      link.target = "_blank";
+      link.rel = "noreferrer";
+      link.className = "group inline-flex rounded-full focus:outline-none focus:ring-2 focus:ring-purple-300";
+      link.setAttribute("aria-label", `${name || login} on GitHub`);
+      link.title = name || login;
+
+      const image = document.createElement("img");
+      image.src = avatar_url;
+      image.alt = `${name || login}'s profile picture`;
+      image.loading = "lazy";
+      image.className = "h-16 w-16 rounded-full border-2 border-purple-900/70 object-cover shadow-lg transition duration-200 group-hover:scale-110 group-hover:border-purple-300";
+
+      link.append(image);
+      return link;
+    });
+
+    sponsorsSection.append(createContainer({
+      className: "flex flex-wrap items-center gap-3",
+      children: sponsorLinks,
+    }));
+  } catch (error) {
+    console.error("Could not load GitHub sponsors.", error);
+  }
+}
+
+loadSponsors();
+
 // Images
 const funnyVideo = document.createElement("video");
 funnyVideo.className = "mt-4 block max-h-[24rem] max-w-2xl ";

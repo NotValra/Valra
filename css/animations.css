@@ -29,7 +29,8 @@ video {
 #description,
 #projects,
 #socials-section,
-#art-section {
+#art-section,
+#sponsors-section {
   min-width: 0;
   max-width: 100%;
   overflow-wrap: anywhere;
