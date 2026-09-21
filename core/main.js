@@ -171,19 +171,19 @@ funnyVideo.setAttribute("aria-label", "Valra video");
 
 
 const funnyVideoSource = document.createElement("source");
-funnyVideoSource.src = "./static/imgs/VALRADOESNTLIKEME!.mp4";
-funnyVideoSource.type = "video/mp4";
+funnyVideoSource.src = "./static/imgs/VALRADOESNTLIKEME.webm";
+funnyVideoSource.type = "video/webm";
 funnyVideo.append(funnyVideoSource, "Your browser does not support HTML5 video.");
 document.querySelector("#misc").append(funnyVideo);
 
 
 const blahajImage = document.createElement("img");
-blahajImage.src = "./static/imgs/blahaj.png";
+blahajImage.src = "./static/imgs/blahaj.webp";
 blahajImage.className = "mx-auto mt-4 max-h-[12rem] w-full max-w-2xl  ";
 
 document.querySelector("#misc").append(blahajImage);
 const gilbertImage = document.createElement("img");
-gilbertImage.src = "./static/imgs/GILBERT.png";
+gilbertImage.src = "./static/imgs/GILBERT.webp";
 gilbertImage.className = "mx-auto mt-4 max-h-[12rem] w-full max-w-2x1";
 document.querySelector("#misc").append(gilbertImage);
 
